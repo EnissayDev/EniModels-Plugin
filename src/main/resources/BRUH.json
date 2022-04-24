@@ -1,0 +1,468 @@
+{
+  "value": {
+    "id": "o1yRGP",
+    "iconTexture": "/components/icons/root.png",
+    "childName": "Root"
+  },
+  "children": [
+    {
+      "value": {
+        "id": "mzTIjw",
+        "iconTexture": "/components/icons/file.png",
+        "childName": "Group"
+      },
+      "children": [
+        {
+          "value": {
+            "id": "SVOFX4",
+            "iconTexture": "/components/icons/cube.png",
+            "childName": "Block",
+            "blockLocation": {
+              "x": 40.0,
+              "y": 0.0,
+              "z": 0.0,
+              "rotateX": 0.0,
+              "rotateY": 0.0,
+              "rotateZ": 0.0,
+              "size": "LARGE",
+              "type": "COAL_BLOCK"
+            }
+          },
+          "children": []
+        },
+        {
+          "value": {
+            "id": "Ty9pVH",
+            "iconTexture": "/components/icons/cube.png",
+            "childName": "Block",
+            "blockLocation": {
+              "x": 50.0,
+              "y": 0.0,
+              "z": 0.0,
+              "rotateX": 0.0,
+              "rotateY": 0.0,
+              "rotateZ": 0.0,
+              "size": "LARGE",
+              "type": "COAL_BLOCK"
+            }
+          },
+          "children": []
+        },
+        {
+          "value": {
+            "id": "n8Yqo4",
+            "iconTexture": "/components/icons/cube.png",
+            "childName": "Block",
+            "blockLocation": {
+              "x": 60.0,
+              "y": 0.0,
+              "z": 0.0,
+              "rotateX": 0.0,
+              "rotateY": 0.0,
+              "rotateZ": 0.0,
+              "size": "LARGE",
+              "type": "COAL_BLOCK"
+            }
+          },
+          "children": []
+        },
+        {
+          "value": {
+            "id": "wmSXaG",
+            "iconTexture": "/components/icons/cube.png",
+            "childName": "Block",
+            "blockLocation": {
+              "x": 60.0,
+              "y": 10.0,
+              "z": 0.0,
+              "rotateX": 0.0,
+              "rotateY": 0.0,
+              "rotateZ": 0.0,
+              "size": "LARGE",
+              "type": "COAL_BLOCK"
+            }
+          },
+          "children": []
+        },
+        {
+          "value": {
+            "id": "DaoSPF",
+            "iconTexture": "/components/icons/cube.png",
+            "childName": "Block",
+            "blockLocation": {
+              "x": 60.0,
+              "y": 20.0,
+              "z": 0.0,
+              "rotateX": 0.0,
+              "rotateY": 0.0,
+              "rotateZ": 0.0,
+              "size": "LARGE",
+              "type": "COAL_BLOCK"
+            }
+          },
+          "children": []
+        },
+        {
+          "value": {
+            "id": "X4zy2e",
+            "iconTexture": "/components/icons/cube.png",
+            "childName": "Block",
+            "blockLocation": {
+              "x": 60.0,
+              "y": 30.0,
+              "z": 0.0,
+              "rotateX": 0.0,
+              "rotateY": 0.0,
+              "rotateZ": 0.0,
+              "size": "LARGE",
+              "type": "COAL_BLOCK"
+            }
+          },
+          "children": []
+        },
+        {
+          "value": {
+            "id": "D2Uala",
+            "iconTexture": "/components/icons/cube.png",
+            "childName": "Block",
+            "blockLocation": {
+              "x": 50.0,
+              "y": 30.0,
+              "z": 0.0,
+              "rotateX": 0.0,
+              "rotateY": 0.0,
+              "rotateZ": 0.0,
+              "size": "LARGE",
+              "type": "COAL_BLOCK"
+            }
+          },
+          "children": []
+        },
+        {
+          "value": {
+            "id": "LwG4GK",
+            "iconTexture": "/components/icons/cube.png",
+            "childName": "Block",
+            "blockLocation": {
+              "x": 40.0,
+              "y": 30.0,
+              "z": 0.0,
+              "rotateX": 0.0,
+              "rotateY": 0.0,
+              "rotateZ": 0.0,
+              "size": "LARGE",
+              "type": "COAL_BLOCK"
+            }
+          },
+          "children": []
+        },
+        {
+          "value": {
+            "id": "7XcMGM",
+            "iconTexture": "/components/icons/cube.png",
+            "childName": "Block",
+            "blockLocation": {
+              "x": 70.0,
+              "y": 30.0,
+              "z": 0.0,
+              "rotateX": 0.0,
+              "rotateY": 0.0,
+              "rotateZ": 0.0,
+              "size": "LARGE",
+              "type": "COAL_BLOCK"
+            }
+          },
+          "children": []
+        },
+        {
+          "value": {
+            "id": "RetX4o",
+            "iconTexture": "/components/icons/cube.png",
+            "childName": "Block",
+            "blockLocation": {
+              "x": 80.0,
+              "y": 30.0,
+              "z": 0.0,
+              "rotateX": 0.0,
+              "rotateY": 0.0,
+              "rotateZ": 0.0,
+              "size": "LARGE",
+              "type": "COAL_BLOCK"
+            }
+          },
+          "children": []
+        },
+        {
+          "value": {
+            "id": "hWgadV",
+            "iconTexture": "/components/icons/cube.png",
+            "childName": "Block",
+            "blockLocation": {
+              "x": 30.0,
+              "y": 40.0,
+              "z": 0.0,
+              "rotateX": 0.0,
+              "rotateY": 0.0,
+              "rotateZ": 0.0,
+              "size": "LARGE",
+              "type": "COAL_BLOCK"
+            }
+          },
+          "children": []
+        },
+        {
+          "value": {
+            "id": "ON4lmw",
+            "iconTexture": "/components/icons/cube.png",
+            "childName": "Block",
+            "blockLocation": {
+              "x": 30.0,
+              "y": 50.0,
+              "z": 0.0,
+              "rotateX": 0.0,
+              "rotateY": 0.0,
+              "rotateZ": 0.0,
+              "size": "LARGE",
+              "type": "COAL_BLOCK"
+            }
+          },
+          "children": []
+        },
+        {
+          "value": {
+            "id": "KHMXe2",
+            "iconTexture": "/components/icons/cube.png",
+            "childName": "Block",
+            "blockLocation": {
+              "x": 90.0,
+              "y": 30.0,
+              "z": 0.0,
+              "rotateX": 0.0,
+              "rotateY": 0.0,
+              "rotateZ": 0.0,
+              "size": "LARGE",
+              "type": "COAL_BLOCK"
+            }
+          },
+          "children": []
+        },
+        {
+          "value": {
+            "id": "7QUk5M",
+            "iconTexture": "/components/icons/cube.png",
+            "childName": "Block",
+            "blockLocation": {
+              "x": 90.0,
+              "y": 20.0,
+              "z": 0.0,
+              "rotateX": 0.0,
+              "rotateY": 0.0,
+              "rotateZ": 0.0,
+              "size": "LARGE",
+              "type": "COAL_BLOCK"
+            }
+          },
+          "children": []
+        },
+        {
+          "value": {
+            "id": "SUZ4qL",
+            "iconTexture": "/components/icons/cube.png",
+            "childName": "Block",
+            "blockLocation": {
+              "x": 90.0,
+              "y": 10.0,
+              "z": 0.0,
+              "rotateX": 0.0,
+              "rotateY": 0.0,
+              "rotateZ": 0.0,
+              "size": "LARGE",
+              "type": "COAL_BLOCK"
+            }
+          },
+          "children": []
+        },
+        {
+          "value": {
+            "id": "St0ydY",
+            "iconTexture": "/components/icons/cube.png",
+            "childName": "Block",
+            "blockLocation": {
+              "x": 90.0,
+              "y": 0.0,
+              "z": 0.0,
+              "rotateX": 0.0,
+              "rotateY": 0.0,
+              "rotateZ": 0.0,
+              "size": "LARGE",
+              "type": "COAL_BLOCK"
+            }
+          },
+          "children": []
+        },
+        {
+          "value": {
+            "id": "K4svmh",
+            "iconTexture": "/components/icons/cube.png",
+            "childName": "Block",
+            "blockLocation": {
+              "x": 30.0,
+              "y": 0.0,
+              "z": 0.0,
+              "rotateX": 0.0,
+              "rotateY": 0.0,
+              "rotateZ": 0.0,
+              "size": "LARGE",
+              "type": "COAL_BLOCK"
+            }
+          },
+          "children": []
+        },
+        {
+          "value": {
+            "id": "EnjSRv",
+            "iconTexture": "/components/icons/cube.png",
+            "childName": "Block",
+            "blockLocation": {
+              "x": 30.0,
+              "y": 30.0,
+              "z": 0.0,
+              "rotateX": 0.0,
+              "rotateY": 0.0,
+              "rotateZ": 0.0,
+              "size": "LARGE",
+              "type": "COAL_BLOCK"
+            }
+          },
+          "children": []
+        },
+        {
+          "value": {
+            "id": "REP4Z0",
+            "iconTexture": "/components/icons/cube.png",
+            "childName": "Block",
+            "blockLocation": {
+              "x": 30.0,
+              "y": 60.0,
+              "z": 0.0,
+              "rotateX": 0.0,
+              "rotateY": 0.0,
+              "rotateZ": 0.0,
+              "size": "LARGE",
+              "type": "COAL_BLOCK"
+            }
+          },
+          "children": []
+        },
+        {
+          "value": {
+            "id": "j16tBc",
+            "iconTexture": "/components/icons/cube.png",
+            "childName": "Block",
+            "blockLocation": {
+              "x": 60.0,
+              "y": 40.0,
+              "z": 0.0,
+              "rotateX": 0.0,
+              "rotateY": 0.0,
+              "rotateZ": 0.0,
+              "size": "LARGE",
+              "type": "COAL_BLOCK"
+            }
+          },
+          "children": []
+        },
+        {
+          "value": {
+            "id": "rzApnR",
+            "iconTexture": "/components/icons/cube.png",
+            "childName": "Block",
+            "blockLocation": {
+              "x": 60.0,
+              "y": 60.0,
+              "z": 0.0,
+              "rotateX": 0.0,
+              "rotateY": 0.0,
+              "rotateZ": 0.0,
+              "size": "LARGE",
+              "type": "COAL_BLOCK"
+            }
+          },
+          "children": []
+        },
+        {
+          "value": {
+            "id": "5W0RO8",
+            "iconTexture": "/components/icons/cube.png",
+            "childName": "Block",
+            "blockLocation": {
+              "x": 60.0,
+              "y": 50.0,
+              "z": 0.0,
+              "rotateX": 0.0,
+              "rotateY": 0.0,
+              "rotateZ": 0.0,
+              "size": "LARGE",
+              "type": "COAL_BLOCK"
+            }
+          },
+          "children": []
+        },
+        {
+          "value": {
+            "id": "oq8B5P",
+            "iconTexture": "/components/icons/cube.png",
+            "childName": "Block",
+            "blockLocation": {
+              "x": 70.0,
+              "y": 60.0,
+              "z": 0.0,
+              "rotateX": 0.0,
+              "rotateY": 0.0,
+              "rotateZ": 0.0,
+              "size": "LARGE",
+              "type": "COAL_BLOCK"
+            }
+          },
+          "children": []
+        },
+        {
+          "value": {
+            "id": "3BA05s",
+            "iconTexture": "/components/icons/cube.png",
+            "childName": "Block",
+            "blockLocation": {
+              "x": 80.0,
+              "y": 60.0,
+              "z": 0.0,
+              "rotateX": 0.0,
+              "rotateY": 0.0,
+              "rotateZ": 0.0,
+              "size": "LARGE",
+              "type": "COAL_BLOCK"
+            }
+          },
+          "children": []
+        },
+        {
+          "value": {
+            "id": "E6HdJw",
+            "iconTexture": "/components/icons/cube.png",
+            "childName": "Block",
+            "blockLocation": {
+              "x": 90.0,
+              "y": 60.0,
+              "z": 0.0,
+              "rotateX": 0.0,
+              "rotateY": 0.0,
+              "rotateZ": 0.0,
+              "size": "LARGE",
+              "type": "COAL_BLOCK"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}
