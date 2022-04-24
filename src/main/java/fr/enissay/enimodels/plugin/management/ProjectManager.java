@@ -18,55 +18,93 @@ public class ProjectManager {
 
     private final static LinkedList<Project> projects = new LinkedList<>();
 
+    /**
+     * Load a project from a json file
+     * with parseTreeView method from the
+     * {@link ParseTreeItem} class and
+     * handle the parsing errors {@link ParsingErrorException}.
+     * @param project
+     * @throws ProjectNotFoundException
+     * @throws ParsingErrorException
+     */
     public static void addProject(Project project) throws ProjectNotFoundException, ParsingErrorException {
+        //Create a file
         final String file;
         try {
             file = FileUtils.readFile(EniModels.class.getResourceAsStream("/" + project.getProjectName() + ".json"));
         } catch (IOException e) {
             throw new ProjectNotFoundException(project.getProjectName());
         }
+        //Create a JSONObject from the file
         final JSONObject jsonObject = new JSONObject(file);
         final Gson gson = new Gson();
         final JSONObject search = jsonObject.getJSONObject("value");
 
+        //Create Temporary Component
         Component component = null;
         final String childName = search.getString("childName");
         final Class<? extends Component> type = ParsingManager.getTypeOfComponent(childName);
 
+        //Set the component
         component = gson.fromJson(search.toString(), type);
 
         try {
+            //Handle everything with parseTreeView method
             ParseTreeItem.parseTreeView(jsonObject, component);
         } catch (JSONException e) {
             throw new ParsingErrorException(project, e.getMessage());
         }
+        //Add the component to the project
         project.getComponents().add(component);
 
+        //Search if the component has children
         final ComponentIterator iterator = new ComponentIterator(component);
         while (iterator.hasNext()) {
             final Component foundComponent = iterator.next();
             project.addComponent(foundComponent, foundComponent.getBlockLocation());
         }
+        //Finally add the result to the projects list
         projects.add(project);
     }
 
-    public void removeProject(Project project) {
-        projects.remove(project);
-    }
-
+    /**
+     * Search the project with the given name.
+     * @param name
+     * @return The specific Project.
+     */
     public Project getProject(String name) {
         return projects.stream().filter(project -> project.getProjectName().equals(name)).findFirst().orElse(null);
     }
 
+    /**
+     * Get the list of all the projects
+     * @return List of all the projects
+     */
     public static LinkedList<Project> getProjects() {
         return projects;
     }
 
+    /**
+     * Remove all the projects
+     */
+    @Deprecated
     public void removeAllProjects() {
         projects.clear();
     }
 
-    public void removeProject(String name) {
-        projects.stream().filter(project -> project.getProjectName().equals(name)).findFirst().ifPresent(projects::remove);
+    /**
+     * Remove the project with the given name
+     * @param project
+     */
+    public void removeProject(Project project) {
+        projects.remove(project);
+    }
+
+    /**
+     * Remove the project with the given name
+     * @param projectName
+     */
+    public static void removeProject(String projectName) {
+        projects.removeIf(project -> project.getProjectName().equals(projectName));
     }
 }

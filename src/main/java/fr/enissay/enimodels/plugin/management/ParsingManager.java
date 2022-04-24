@@ -7,6 +7,11 @@ import fr.enissay.enimodels.plugin.management.component.components.block.Block;
 
 public class ParsingManager {
 
+    /**
+     * Method to get a component from its name.
+     * @param name
+     * @return type of the component
+     */
     public static Class<? extends Component> getTypeOfComponent(final String name){
         Class<? extends Component> newType = null;
 

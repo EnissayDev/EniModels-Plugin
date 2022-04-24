@@ -11,7 +11,7 @@ public class BlockLocation implements Serializable {
 
     /**
      *
-     * Create a new Instance of <code>BlockLocation</code>
+     * Create a new Instance of {@link BlockLocation}
      * with its given parameters
      *
      * @param x

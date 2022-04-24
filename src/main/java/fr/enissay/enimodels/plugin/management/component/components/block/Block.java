@@ -5,6 +5,9 @@ import fr.enissay.enimodels.plugin.utils.Mode;
 
 public class Block extends Component {
 
+    /**
+     * Important Component to maintain the ArmorStands
+     */
     public Block() {
         super(Mode.getString(6, Mode.ALPHANUMERIC), "/components/icons/cube.png", "Block");
         setBlockLocation(null);

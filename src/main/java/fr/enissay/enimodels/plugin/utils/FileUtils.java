@@ -7,6 +7,14 @@ import java.io.InputStreamReader;
 
 public class FileUtils {
 
+    /**
+     *
+     * This method reads a file and returns its content as a String
+     *
+     * @param inputStream
+     * @return
+     * @throws IOException
+     */
     public static String readFile(InputStream inputStream) throws IOException {
         StringBuilder stringBuilder = new StringBuilder();
         try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream))) {

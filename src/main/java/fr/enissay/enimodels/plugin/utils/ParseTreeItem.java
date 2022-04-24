@@ -16,7 +16,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class ParseTreeItem {
-
+    
     public static void parseTreeView(final JSONObject jsonObject, final Component parent) throws JSONException {
 
         final Gson gson = new Gson();
