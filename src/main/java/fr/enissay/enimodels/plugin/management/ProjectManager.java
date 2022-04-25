@@ -11,6 +11,7 @@ import fr.enissay.enimodels.plugin.utils.ParseTreeItem;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.LinkedList;
 
@@ -29,12 +30,7 @@ public class ProjectManager {
      */
     public static void addProject(Project project) throws ProjectNotFoundException, ParsingErrorException {
         //Create a file
-        final String file;
-        try {
-            file = FileUtils.readFile(EniModels.class.getResourceAsStream("/" + project.getProjectName() + ".json"));
-        } catch (IOException e) {
-            throw new ProjectNotFoundException(project.getProjectName());
-        }
+        final String file = FileUtils.readFile(new File("plugins/EniModels/models/" + project.getProjectName() + ".json"));
         //Create a JSONObject from the file
         final JSONObject jsonObject = new JSONObject(file);
         final Gson gson = new Gson();
@@ -72,8 +68,10 @@ public class ProjectManager {
      * @param name
      * @return The specific Project.
      */
-    public Project getProject(String name) {
-        return projects.stream().filter(project -> project.getProjectName().equals(name)).findFirst().orElse(null);
+    public static Project getProject(String name) throws ProjectNotFoundException, ParsingErrorException{
+        final Project proj = projects.stream().filter(project -> project.getProjectName().equals(name)).findFirst().orElse(null);
+        if (proj == null) throw new ProjectNotFoundException(name);
+        return proj;
     }
 
     /**
@@ -88,7 +86,7 @@ public class ProjectManager {
      * Remove all the projects
      */
     @Deprecated
-    public void removeAllProjects() {
+    public static void removeAllProjects() {
         projects.clear();
     }
 
@@ -96,7 +94,7 @@ public class ProjectManager {
      * Remove the project with the given name
      * @param project
      */
-    public void removeProject(Project project) {
+    public static void removeProject(Project project) {
         projects.remove(project);
     }
 

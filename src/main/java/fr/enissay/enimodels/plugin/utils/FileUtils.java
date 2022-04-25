@@ -1,9 +1,6 @@
 package fr.enissay.enimodels.plugin.utils;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 
 public class FileUtils {
 
@@ -15,15 +12,29 @@ public class FileUtils {
      * @return
      * @throws IOException
      */
-    public static String readFile(InputStream inputStream) throws IOException {
-        StringBuilder stringBuilder = new StringBuilder();
-        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream))) {
-            String line;
-            while ((line = bufferedReader.readLine()) != null) {
-                stringBuilder.append(line);
+    public static String readFile(File file)
+    {
+        StringBuilder stringBuffer = new StringBuilder();
+        BufferedReader bufferedReader = null;
+        try {
+            bufferedReader = new BufferedReader(new FileReader(file));
+
+            String text;
+            while((text = bufferedReader.readLine()) != null) {
+                stringBuffer.append(text);
             }
         }
-        return stringBuilder.toString();
+        catch(FileNotFoundException e) {
+        }
+        catch(IOException e) {
+        }
+        finally {
+            try {
+                bufferedReader.close();
+            }
+            catch(IOException e) {
+            }
+        }
+        return stringBuffer.toString();
     }
-
 }

@@ -1,0 +1,6 @@
+name: EniModels
+main: fr.enissay.enimodels.plugin.EniModels
+version: 0.0.1
+author: EnissayDev
+description: Plugin for EniModels
+api-version: 1.8.8
