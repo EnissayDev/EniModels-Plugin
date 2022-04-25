@@ -14,6 +14,7 @@ import fr.enissay.enimodels.plugin.management.component.exceptions.ProjectNotFou
 import fr.enissay.enimodels.plugin.utils.commands.EniCommand;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.json.JSONException;
 
 import java.io.File;
 import java.util.Arrays;
@@ -74,7 +75,7 @@ public class EniModels extends JavaPlugin {
                 final Project project = new Project(file.getName().replace(".json", ""));
                 try {
                     ProjectManager.addProject(project);
-                } catch (ProjectNotFoundException | ParsingErrorException e) {
+                } catch (ProjectNotFoundException | ParsingErrorException | JSONException e) {
                     e.printStackTrace();
                 }
             });

@@ -32,7 +32,13 @@ public class ProjectManager {
         //Create a file
         final String file = FileUtils.readFile(new File("plugins/EniModels/models/" + project.getProjectName() + ".json"));
         //Create a JSONObject from the file
-        final JSONObject jsonObject = new JSONObject(file);
+        JSONObject jsonObject;
+        try {
+            jsonObject = new JSONObject(file);
+        }catch (JSONException e) {
+            throw new ParsingErrorException(project, e.getMessage());
+        }
+        
         final Gson gson = new Gson();
         final JSONObject search = jsonObject.getJSONObject("value");
 

@@ -9,6 +9,7 @@ import fr.enissay.enimodels.plugin.management.component.exceptions.ProjectNotFou
 import fr.enissay.enimodels.plugin.utils.commands.EniCommand;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
+import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.ArmorStand;
@@ -39,6 +40,8 @@ public class EniModelsCommand extends EniCommand {
                         if (ModelManager.getArmorStandsOfProject(getPlayer().getWorld(), ProjectManager.getProject(modelName)).size() <= 0) {
                             ModelManager.spawnModel(ProjectManager.getProject(modelName), getPlayer().getLocation());
                         }else ModelManager.teleportProjectToACenter(getPlayer().getLocation(), ProjectManager.getProject(modelName));
+
+                        getPlayer().playSound(getPlayer().getLocation(), Sound.CHICKEN_EGG_POP, 1, 1);
                         sendSuccess("Spawned model " + modelName + " at your location with " + ModelManager.getArmorStandsOfProject(getPlayer().getWorld(), ProjectManager.getProject(modelName)).size() + " ArmorStands.");
                     } catch (ProjectNotFoundException e) {
                         sendError("The Project has not been found.");
