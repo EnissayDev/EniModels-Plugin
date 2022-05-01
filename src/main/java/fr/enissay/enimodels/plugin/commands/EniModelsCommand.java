@@ -4,18 +4,20 @@ import com.google.common.collect.Lists;
 import fr.enissay.enimodels.plugin.EniModels;
 import fr.enissay.enimodels.plugin.management.ModelManager;
 import fr.enissay.enimodels.plugin.management.ProjectManager;
+import fr.enissay.enimodels.plugin.management.component.components.block.BlockSize;
 import fr.enissay.enimodels.plugin.management.component.exceptions.ParsingErrorException;
 import fr.enissay.enimodels.plugin.management.component.exceptions.ProjectNotFoundException;
 import fr.enissay.enimodels.plugin.utils.commands.EniCommand;
-import org.bukkit.ChatColor;
-import org.bukkit.Location;
-import org.bukkit.Sound;
+import org.bukkit.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.Entity;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.util.EulerAngle;
 import org.bukkit.util.Vector;
 
 import java.util.Arrays;
@@ -60,6 +62,47 @@ public class EniModelsCommand extends EniCommand {
                     sendMessage(ChatColor.DARK_GRAY + " - ArmorStands: " + ChatColor.GRAY + ModelManager.getArmorStandsOfProject(getPlayer().getWorld(), project).size());
                     sendMessage("");
                 });
+            }else if (args[0].equalsIgnoreCase("test")){
+                final Location location = getPlayer().getLocation();
+                final ArmorStand armorStand = (ArmorStand) location.getWorld().spawnEntity(location, org.bukkit.entity.EntityType.ARMOR_STAND);
+                final EulerAngle eulerAngle = armorStand.getHeadPose();
+
+                armorStand.setCustomNameVisible(true);
+                armorStand.setGravity(false);
+                armorStand.setArms(false);
+                armorStand.setVisible(false);
+                armorStand.setBasePlate(false);
+                armorStand.setCanPickupItems(false);
+                armorStand.setSmall(false);
+                armorStand.setHelmet(new ItemStack(Material.DIAMOND_BLOCK));
+
+                new BukkitRunnable() {
+                    double angle = 0;
+                    double result = 0;
+                    double offset = 0;
+
+                    @Override
+                    public void run() {
+                        //TESTING ONLY ON X AXIS
+                        //height of head in blocks: 0.425
+                        //height of head in blocks (small): 0.2375
+
+                        armorStand.setCustomName("angle: " + angle);
+                        armorStand.setHeadPose(new EulerAngle(0, 0, Math.toRadians(angle)));
+
+                        if (angle <= 90) {
+                            result = 90 - angle;
+                            offset = -(1 - result)/90;
+                            armorStand.teleport(location.clone().add(0, 0, offset));
+                        }else if (angle <= 270){
+                            result = 270 - angle;
+                            offset = (1 - result)/270;
+                            armorStand.teleport(location.clone().add(0, 0, offset));
+                        }
+                        angle++;
+                        if (angle >= 360) angle = 0;
+                    }
+                }.runTaskTimer(EniModels.getInstance(), 2, 2);
             }else if (args[0].equalsIgnoreCase("showcase")) {
                 if (args.length > 1) {
                     final String modelName = args[1];

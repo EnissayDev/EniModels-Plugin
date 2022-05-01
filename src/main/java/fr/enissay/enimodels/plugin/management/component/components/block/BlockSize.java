@@ -2,7 +2,7 @@ package fr.enissay.enimodels.plugin.management.component.components.block;
 
 public enum BlockSize {
 
-    SMALL(5, "SMALL"),
+    //SMALL(5, "SMALL"),
     MEDIUM(7, "MEDIUM"),
     LARGE(10, "LARGE");
 

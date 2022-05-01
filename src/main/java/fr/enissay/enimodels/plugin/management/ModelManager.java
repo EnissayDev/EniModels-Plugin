@@ -40,9 +40,9 @@ public class ModelManager {
             int offset = 16;
             switch (blockLocation.getSize()) {
                 case MEDIUM:
-                    offset = 8;
-                case SMALL:
-                    offset = 4;
+                    offset = 16;
+                /*case SMALL:
+                    offset = 4;*/
             }
             final Location componentLocation = center.clone().add((blockLocation.getX() / offset), (blockLocation.getY() / offset), (blockLocation.getZ() / offset));
             componentLocation.setYaw(0.0f);
@@ -61,22 +61,22 @@ public class ModelManager {
         project.getComponents().forEach(component -> {
             if (component instanceof Block) {
                 final BlockLocation blockLocation = component.getBlockLocation();
-                blockLocation.setRotateX(0);
+                /*blockLocation.setRotateX(0);
                 blockLocation.setRotateY(0);
-                blockLocation.setRotateZ(0);
-                final Location componentLocation = location.clone().add((blockLocation.getX() / 16), (blockLocation.getY() / (blockLocation.getSize() == BlockSize.MEDIUM ? 3 : 16)) , blockLocation.getZ() / 16);
+                blockLocation.setRotateZ(0);*/
+                final Location componentLocation = location.clone().add((blockLocation.getX() / 16), (blockLocation.getY() / (blockLocation.getSize() == BlockSize.MEDIUM ? 16 : 16)) , blockLocation.getZ() / 16);
                 componentLocation.setYaw(0.0f);
                 componentLocation.setPitch(0.0f);
 
-                if (blockLocation.getSize() == BlockSize.MEDIUM) {
+                /*if (blockLocation.getSize() == BlockSize.MEDIUM) {
                     Bukkit.broadcastMessage(ChatColor.BLUE + "*size: " + blockLocation.getSize() + " OG X: " + blockLocation.getX() + " OG Y: " + blockLocation.getY() + " OG Z: " + blockLocation.getZ());
                     Bukkit.broadcastMessage(ChatColor.AQUA + "-> X: " + (blockLocation.getX() / 16) + " Y: " + (blockLocation.getY() / (blockLocation.getSize() == BlockSize.MEDIUM ? 10 : 16)) + " Z: " + (blockLocation.getZ() / 16));
                     Bukkit.broadcastMessage(ChatColor.DARK_AQUA + "--> X: " + componentLocation.getX() + " Y: " + componentLocation.getY() + " Z: " + componentLocation.getZ());
 
-                }
+                }*/
                 final EulerAngle rotation = new EulerAngle(Math.toRadians(blockLocation.getRotateX()), Math.toRadians(blockLocation.getRotateY()), Math.toRadians(blockLocation.getRotateZ()));
-                spawnArmorStand(component.getId(), blockLocation, componentLocation.add((blockLocation.getSize() == BlockSize.SMALL ? 0.2 : 0), (blockLocation.getSize() == BlockSize.SMALL ? 1 : (blockLocation.getSize() == BlockSize.SMALL ? 0.35 : 0)), 0).subtract(0, (blockLocation.getSize() == BlockSize.MEDIUM ? 4.19365 : 0), 0), rotation);
 
+                spawnArmorStand(component.getId(), blockLocation, componentLocation.add(/*(blockLocation.getSize() == BlockSize.SMALL ? 0.2 : 0)*/0, (blockLocation.getSize() == BlockSize.MEDIUM ? 0.75 : 0), 0)/*.subtract(0, (blockLocation.getSize() == BlockSize.MEDIUM ? 4.19365 : 0), 0)*/, rotation);
                 //Bukkit.broadcastMessage("Spawned " + component.getId() + " rotation: " + rotation.getX() + " " + rotation.getY() + " " + rotation.getZ());
                 /*new BukkitRunnable(){
 
@@ -146,14 +146,14 @@ public class ModelManager {
             case MEDIUM:
                 armorStand.getEquipment().setHelmet(new ItemStack(translateType(blockLocation.getType())));
                 break;
-            case SMALL:
+            /*case SMALL:
                 armorStand.setArms(true);
                 armorStand.setItemInHand(new ItemStack(translateType(blockLocation.getType())));
                 //DEFAULT:
                 //BLOCK_ANGLE: -43, -41.5, 19.5
                 //ITEM_ANGLE: -20, 0, 0
                 armorStand.setRightArmPose(new EulerAngle(Math.toRadians(-43), Math.toRadians(-40.5), Math.toRadians(19.5)));
-                break;
+                break;*/
         }
     }
 
